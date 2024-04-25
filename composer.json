@@ -1,0 +1,24 @@
+{
+    "name": "solenoid/php-async",
+    "description": "Async library",
+    "type": "library",
+    "keywords": ["async","event-loop"],
+    "homepage": "https://github.com/Solenoid-IT/php-async",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pier Niccolò Giannelli",
+            "email": "pierniccologiannelli@gmail.com",
+            "homepage": "https://www.solenoid.it",
+            "role": "Full Stack Web Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Solenoid\\Async\\": "src"
+        }
+    }
+}
