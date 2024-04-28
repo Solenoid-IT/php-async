@@ -89,24 +89,24 @@ class EventLoop
     // Returns [mixed]
     public static function await (Promise $promise)
     {
-        // (Suspending the fiber)
-        \Fiber::suspend();
-
-
-
         // (Getting the value)
         $fiber = \Fiber::getCurrent();
 
-        while ( !$fiber->isTerminated() )
-        {// Processing each iteration
-            // (Resuming the fiber)
-            $fiber->resume();
-        }
+
+
+        // (Suspending the fiber)
+        $fiber->suspend();
+
+        // (Running the promise)
+        $promise->run();
+
+        // (Resuming the fiber)
+        $fiber->resume();
 
 
 
         // Returning the value
-        return ( $promise->resolve )();
+        return $promise->get_result();
     }
 }
 
